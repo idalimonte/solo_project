@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous">
+    <title>Show</title>
+</head>
+<body>
+    <div class="p-4 mx-auto m-3" style="width:1300px;background-color:#d6def4;">
+        <div class="p-2 ml-3 text-end">
+            <a href="/new" class="btn btn-light m-2 text-nowrap text-dark">Add a Memory</a>
+            <a href="/user/account" class="btn btn-light text-dark m-2 text-nowrap">Account</a>
+            <a href="/logout" class="btn btn-dark text-light  m-2" >Logout</a>
+        </div> 
+        <div class="card m-2 p-4 ml-4" style="width:700px"> 
+            <div class="card-body">
+                <h2 class="font-weight-bold p-2">{{ memory.title }}</h2>
+                <h5 class="p-2">Description:</h5>
+                <p>{{ memory.description }}</p>
+                <a href="/show_image" class="card-link" >Click to See the Photo!</a>  
+            </div>      
+        </div>
+    </div>
+</body>
+</html>

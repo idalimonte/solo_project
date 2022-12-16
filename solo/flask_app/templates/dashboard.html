@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container mx-auto m-3 border border-dark p-4 bg-light" style="width:1000px">
+        <div class="p-2 d-flex flex-row justify-content-between">
+            <h1 class="text-center">Welcome, {{ user.first_name }} {{ user.last_name }}!</h1>
+        </div>
+        <div class="mr-1 text-end">
+            <a href="/new" class="btn btn-primary btn-sm m-1 text-nowrap">Add a Memory</a>
+            <a href="/user/account" class="btn btn-primary btn-sm m-1 text-nowrap">My Account</a>
+            <a href="/logout" class="btn btn-danger btn-sm m-1" style="width:100px"">Logout</a>
+        </div> 
+        <h2>Family Memories</h2>
+        <div class="d-flex card border border-dark p-3">
+        {% for memory in all_memories %} 
+            <div class="m-1">
+                <a href="/show/{{ memory.id }}" class="link-dark m-1">{{ memory.title }}</a> 
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

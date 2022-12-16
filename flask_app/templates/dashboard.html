@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main mx-auto p-4" style="background-color:#d6def4;height: 100vh;font-family:Arial, Helvetica, sans-serif">
+        <div class="p-3 nav bg-light d-flex flex-row justify-content-between">
+            <h1 class="text-center">Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
+            <a href="/new" class="m-1 text-dark text-nowrap"style="font-weight: bold;">Add a Memory
+                <img src="staticFiles/images/memory.png" style="width:40px;height:40px;
+                text-decoration:none"class="p-1">
+            </a>
+            <a href="/user/account" class="m-1 text-dark text-nowrap"style="font-weight: bold;">My Account
+                <img src="staticFiles/images/account.png" style="width:40px;height:40px"class="p-1">
+            </a>
+            <a href="/logout" class="text-dark m-1" style="font-weight: bold;">Logout
+                <img src="staticFiles/images/logout.png" style="width:40px;height:40px"class="p-1"></a>
+        </div>
+        <div class="container p-3 mt-3" style="width:700px;align-items: center;font-size:20px;">
+            <h2 class="p-3 mt-3" style="align-items: center;">Family Memories</h2>
+            <div class="d-flex card border border-dark p-3 border-2 rounded">
+            {% for memory in all_memories %} 
+                <div class="m-1">
+                    <a href="/show/{{ memory.id }}" class="link-dark m-1">{{ memory.title }}
+                    </a> 
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
